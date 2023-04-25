@@ -5,6 +5,10 @@ VisualStudioVersion = 17.4.33205.214
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommentsApp.WebAPI", "CommentsApp.WebAPI\CommentsApp.WebAPI.csproj", "{1D48B780-2BE1-4337-8D58-E113F071ADA5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommentsApp.Core", "CommentsApp.Core\CommentsApp.Core.csproj", "{966846C8-E98F-420C-B0CF-15C0E2EA68B7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommentsApp.EFCore", "CommentsApp.EFCore\CommentsApp.EFCore.csproj", "{232782F6-2C6C-4951-92E5-8E06A21D9E11}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{1D48B780-2BE1-4337-8D58-E113F071ADA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1D48B780-2BE1-4337-8D58-E113F071ADA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1D48B780-2BE1-4337-8D58-E113F071ADA5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{966846C8-E98F-420C-B0CF-15C0E2EA68B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{966846C8-E98F-420C-B0CF-15C0E2EA68B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{966846C8-E98F-420C-B0CF-15C0E2EA68B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{966846C8-E98F-420C-B0CF-15C0E2EA68B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{232782F6-2C6C-4951-92E5-8E06A21D9E11}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{232782F6-2C6C-4951-92E5-8E06A21D9E11}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{232782F6-2C6C-4951-92E5-8E06A21D9E11}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{232782F6-2C6C-4951-92E5-8E06A21D9E11}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
