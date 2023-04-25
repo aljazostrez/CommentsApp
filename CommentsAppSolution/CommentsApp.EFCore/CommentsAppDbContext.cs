@@ -25,5 +25,10 @@ namespace CommentsApp.EFCore
                 options.UseSqlite($"Data Source={_dbPath}");
 
         }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<User>().HasAlternateKey(x => x.Email);
+        }
     }
 }
