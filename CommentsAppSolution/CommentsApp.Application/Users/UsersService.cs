@@ -24,7 +24,7 @@ namespace CommentsApp.Application.Users
             // check if an user with the same email already exists
             var existingUser = await _dbContext.Users.FirstOrDefaultAsync(x => x.Email == insertUser.Email);
             if (existingUser != null)
-                throw new Exception("An with this email already exists.");
+                throw new Exception("User with this email already exists.");
 
             // insert user in DB
             var user = await _dbContext.Users.AddAsync(new User
