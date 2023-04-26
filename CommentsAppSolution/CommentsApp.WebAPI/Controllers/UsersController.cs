@@ -29,6 +29,14 @@ namespace CommentsApp.WebAPI.Controllers
             var result = await _usersService.GetAll();
             return Ok(result);
         }
+        
+        [HttpGet("{userId}")]
+        [ProducesResponseType(200, Type = typeof(UserDto))]
+        public async Task<IActionResult> GetById(int userId)
+        {
+            var result = await _usersService.GetById(userId);
+            return Ok(result);
+        }
 
         [HttpPost]
         [Authorize]

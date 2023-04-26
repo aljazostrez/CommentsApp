@@ -19,6 +19,16 @@ namespace CommentsApp.Application.Users
             return await _dbContext.Users.Select(x => new UserDto(x)).ToListAsync();
         }
 
+        public async Task<UserDto> GetById(int id)
+        {
+            // find the user with id
+            var user = await _dbContext.Users.FindAsync(id);
+            if (user == null)
+                throw new Exception($"User with id {id} does not exists.");
+
+            return new UserDto(user);
+        }
+
         public async Task<UserDto> Insert(InsertUserDto insertUser)
         {
             // check if an user with the same email already exists
