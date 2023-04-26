@@ -13,6 +13,9 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 // add DB context
+// this is just a demonstration of connecting to DB, so we use sqlite db as local file.
+// DB should be hosted somewhere and connection string should not be hardcoded, but configured
+// in appsettings.json or somewhere else (eg. MS Azure Key Vault)
 var startupPath = Directory.GetCurrentDirectory();
 var dbPath = Path.Join(startupPath, "commentsAppDb.db");
 builder.Services.AddDbContext<CommentsAppDbContext>(options => options.UseSqlite($"Data Source={dbPath}"));

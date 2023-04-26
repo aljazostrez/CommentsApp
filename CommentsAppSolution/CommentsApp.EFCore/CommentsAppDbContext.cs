@@ -8,26 +8,12 @@ namespace CommentsApp.EFCore
         public DbSet<User> Users { get; set; }
         public DbSet<Comment> Comments { get; set; }
 
-        // this is just a demonstration of connecting to DB, so we use sqlite db as local file.
-        // DB should be hosted somewhere and connection string should not be hardcoded, but configured
-        // in appsettings.json or somewhere else (eg. MS Azure Key Vault)
-        private string _dbPath;
-
-        public CommentsAppDbContext()
-        {
-            var startupPath = Directory.GetCurrentDirectory();
-            _dbPath = Path.Join(startupPath, "commentsAppDb.db");
-        }
-
-        protected override void OnConfiguring(DbContextOptionsBuilder options)
-        {
-            if (!options.IsConfigured)
-                options.UseSqlite($"Data Source={_dbPath}");
-
-        }
+        // the following constructor is used when configuring db on startup
+        public CommentsAppDbContext(DbContextOptions<CommentsAppDbContext> options) : base(options) { }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            // we want emails to be unique
             modelBuilder.Entity<User>().HasAlternateKey(x => x.Email);
         }
     }
