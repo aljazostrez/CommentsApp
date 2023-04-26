@@ -1,3 +1,5 @@
+using CommentsApp.Application.Comments;
+using CommentsApp.Application.Users;
 using CommentsApp.EFCore;
 using Microsoft.EntityFrameworkCore;
 
@@ -14,6 +16,10 @@ builder.Services.AddSwaggerGen();
 var startupPath = Directory.GetCurrentDirectory();
 var dbPath = Path.Join(startupPath, "commentsAppDb.db");
 builder.Services.AddDbContext<CommentsAppDbContext>(options => options.UseSqlite($"Data Source={dbPath}"));
+
+// dependency injection
+builder.Services.AddScoped<IUsersService, UsersService>();
+builder.Services.AddScoped<ICommentsService, CommentsService>();
 
 var app = builder.Build();
 

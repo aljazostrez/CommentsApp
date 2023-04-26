@@ -15,6 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\CommentsApp.Application\CommentsApp.Application.csproj" />
     <ProjectReference Include="..\CommentsApp.EFCore\CommentsApp.EFCore.csproj" />
   </ItemGroup>
 
