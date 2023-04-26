@@ -2,6 +2,7 @@
 using CommentsApp.Application.Comments.Dtos;
 using CommentsApp.Application.Users;
 using CommentsApp.Application.Users.Dtos;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -30,6 +31,7 @@ namespace CommentsApp.WebAPI.Controllers
         }
 
         [HttpPost]
+        [Authorize]
         [ProducesResponseType(201, Type = typeof(UserDto))]
         public async Task<IActionResult> InsertUser([FromBody] InsertUserDto insertUser)
         {
@@ -54,6 +56,7 @@ namespace CommentsApp.WebAPI.Controllers
         }
 
         [HttpPost("{userId}/comments")]
+        [Authorize]
         [ProducesResponseType(200, Type = typeof(CommentDto))]
         public async Task<IActionResult> GetAllCommentsForUser(int userId, [FromBody] InsertCommentDto insertComment)
         {
