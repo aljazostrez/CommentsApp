@@ -1,3 +1,6 @@
+using CommentsApp.EFCore;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -6,6 +9,11 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+// add DB context
+var startupPath = Directory.GetCurrentDirectory();
+var dbPath = Path.Join(startupPath, "commentsAppDb.db");
+builder.Services.AddDbContext<CommentsAppDbContext>(options => options.UseSqlite($"Data Source={dbPath}"));
 
 var app = builder.Build();
 

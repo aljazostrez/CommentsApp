@@ -11,7 +11,7 @@ namespace CommentsApp.EFCore
         // this is just a demonstration of connecting to DB, so we use sqlite db as local file.
         // DB should be hosted somewhere and connection string should not be hardcoded, but configured
         // in appsettings.json or somewhere else (eg. MS Azure Key Vault)
-        private string _dbPath { get; }
+        private string _dbPath;
 
         public CommentsAppDbContext()
         {
