@@ -55,7 +55,7 @@ namespace CommentsApp.Application.Comments
             // check if comment with combination of commentId and userId exists
             var comment = await _dbContext.Comments.FirstOrDefaultAsync(x => x.Id == commentId && x.UserId == userId);
             if (comment == null)
-                throw new Exception("Comment with id={commentId} and userId={userId} does not exists.");
+                throw new Exception($"Comment with id={commentId} and userId={userId} does not exists.");
 
             _dbContext.Comments.Remove(comment);
             await _dbContext.SaveChangesAsync();
