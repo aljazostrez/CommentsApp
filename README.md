@@ -12,7 +12,7 @@ What was done:
     - Application - business logic (services, interfaces, dtos)
     
 - Quick documentation:
-    - Authentication (Basic Authentication) is required for all POST request. username/password: demo/demo
+    - Authentication (Basic Authentication) is required for all POST request. You can authenticate using Swagger. username/password: demo/demo
     - GET api/Users - get all users
     - GET api/Users/:userId - get user by Id
     - POST api/Users - create new user
